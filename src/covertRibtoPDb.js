@@ -80,11 +80,11 @@ const generateRandomSequence = async (
     const ribId = random.int(0, 1000);
     console.log(`RibId: ${ribId}`);
 
-    const ribFilename = `./src/app/api/generate_sequences/sequence${ribId}.rib`;
+    const ribFilename = `./src/generate_sequences/sequence${ribId}.rib`;
     fs.writeFileSync(ribFilename, ribContent);
-    const pdbFilename = `./src/app/api/generate_sequences/sequence${ribId}.pdb`;
+    const pdbFilename = `./src/generate_sequences/sequence${ribId}.pdb`;
 
-    const command = `./src/app/api/generate_sequences/ribosome ${ribFilename} ${pdbFilename} ./src/app/api/generate_sequences/res.zmat`;
+    const command = `./src/generate_sequences/ribosome ${ribFilename} ${pdbFilename} ./src/generate_sequences/res.zmat`;
 
     try {
       await execAsync(command);
